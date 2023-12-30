@@ -1,0 +1,44 @@
+.App {
+  justify-content: center; /* Centrer le contenu horizontalement */
+  align-items: center;     /* Centrer le contenu verticalement */
+  height: 100vh;           /* Utiliser la hauteur de la vue pour centrer le contenu */
+}
+
+.App-container {
+  display: flex;
+  justify-content: space-around; /* Espacement équitable entre les enfants */
+  flex-wrap: wrap;               /* Permettre le retour à la ligne des éléments */
+
+  .groslogo {
+    max-width: 100%;  /* Assurez-vous que l'image ne dépasse pas la largeur du conteneur */
+  }
+
+  .expo {
+    box-sizing: border-box;    /* Inclure les bordures et le padding dans la largeur totale */
+    width: calc(50% - 20px);    /* 50% moins les marges de part et d'autre de 10px */
+    padding: 20px;
+    border: 1px solid #ccc;     /* Bordure de 1 pixel de couleur grise */
+    margin: 10px;              /* Marge de 10 pixels autour du contenu */
+    text-align: left;          /* Aligner le texte à gauche */
+
+    h1 {
+      margin-bottom: 10px;     /* Marge en bas du titre */
+    }
+
+    p {
+      margin: 5px 0;           /* Marge au-dessus et en dessous des paragraphes */
+    }
+  }
+}
+
+/* Ajoutez des règles de média query pour la mise en page responsive */
+@media (max-width: 768px) {
+  /* Lorsque la largeur de l'écran est inférieure à 768px */
+  .App .App-container {
+    display: flex;
+    /* flex-direction: column;     // Afficher les éléments en colonne */
+    .expo {
+      width: calc(100% - 10px);  /* Pleine largeur moins les marges */
+    }
+  }
+}
